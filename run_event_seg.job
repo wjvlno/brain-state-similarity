@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+#BSUB -J eventsegtestrun_full_1
+#BSUB -P dnasn
+#BSUB -o %J.out
+#BSUB -e %J.err
+#BSUB -W 120:00
+#BSUB -q normal
+#BSUB -n 4
+#BSUB -R "rusage[mem=16G]"
+#BSUB -B
+#BSUB -N
+#BSUB -u w.villano@umiami.edu
+
+# move to scratch
+cd /scratch/dnasn
+
+# load environment
+ml wml_anaconda3
+conda activate newenv3
+
+# run python script
+python /scratch/dnasn/scripts/HMM_event_seg.py
+
+# deactivate env
+conda deactivate
+
+# move outputs from scratch to home
+mv /scratch/dnasn/outputs/* /home/w.villano/outputs
+# mv /scratch/dnasn/inputs/* /home/w.villano/inputs
