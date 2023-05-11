@@ -11,4 +11,4 @@ Preprocessing steps are carried out in sequence by the following scripts:
 - evPat_similarity_proc_analyses.R (preprocesses and analyzes intermediate file)
 
 ### 3. Analyses
-Representational similarity analyses are carried out in evPat_similarity_proc_analyses.R (branch coming soon)
+Event boundary-related analyses and representational similarity analyses are carried out in evPat_similarity_proc_analyses.R 
